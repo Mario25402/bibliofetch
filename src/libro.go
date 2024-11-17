@@ -19,9 +19,9 @@ func EsPositivo (num int) bool{
 }
 
 // Crea un nuevo libro con datos válidos
-func NuevoLibro(edicion int, publicacion int, editorial string, datos datosClave) (*libro, error){
-	edicionValida := esPositivo(edicion)
-	publicacionValida := esPositivo(publicacion)
+func NuevoLibro(edicion int, publicacion int, editorial string, datos DatosClave) (*Libro, error){
+	edicionValida := EsPositivo(edicion)
+	publicacionValida := EsPositivo(publicacion)
 
 	// Ambos datos inválidos
 	if !edicionValida && !publicacionValida {
@@ -33,5 +33,5 @@ func NuevoLibro(edicion int, publicacion int, editorial string, datos datosClave
 	}
 
 	// Datos válidos: se crea el libro sin devolver errores
-	return &libro{edicion, publicacion, editorial, datos}, nil
+	return &Libro{edicion, publicacion, editorial, datos}, nil
 }
