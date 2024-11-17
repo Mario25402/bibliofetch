@@ -4,22 +4,22 @@ import (
 	"errors"
 )
 
-type libro struct{
-	edicion int
-	anioPublicacion int
+type Libro struct{
+	Edicion int
+	AnioPublicacion int
 
-	editorial string
+	Editorial string
 
-	datosClave datosClave // Estructura de variables de identificación unívoca de un libro
+	DatosLibro DatosClave
 }
 
 // Comprueba que un dato sea positivo
-func esPositivo (num int) bool{
+func EsPositivo (num int) bool{
 	return num > 0
 }
 
 // Crea un nuevo libro con datos válidos
-func nuevoLibro(edicion int, publicacion int, editorial string, datos datosClave) (*libro, error){
+func NuevoLibro(edicion int, publicacion int, editorial string, datos datosClave) (*libro, error){
 	edicionValida := esPositivo(edicion)
 	publicacionValida := esPositivo(publicacion)
 
